@@ -58,4 +58,31 @@ console.log(add(4, 8)); // 12
 console.log(add(1, 2, 3, 4, 5)); // 15
 ```
 
+# Spread Operator (...)
+
+This operator comes in helpful when we need to **insert** elements from **one array or object into another**. All of these tasks can be accomplished without the need of any push, pop, or insert operations.
+
+```jsx
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+let arr3 = [arr1, arr2];
+console.log(arr3); // [[1, 2, 3], [4, 5, 6]]
+
+arr3 = [...arr1, ...arr2];
+console.log(arr3); // [1, 2, 3, 4, 5, 6]
+```
+
+# For-of Loop
+
+When we need to **traverse** over an **array** without knowing anything about its size, then **for-of loop** comes very handy. We simply need the **name** of the array and a **for-of loop** to **iterate** over the entries in the **simplest** method possible.
+
+```jsx
+let arr = [1, 2, 3, 4, 5, 6];
+
+for (let i of arr) {
+  console.log(i);
+}
+```
+
 ## *IN PROGRESS...*
