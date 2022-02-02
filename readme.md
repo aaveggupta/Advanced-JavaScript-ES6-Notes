@@ -85,4 +85,72 @@ for (let i of arr) {
 }
 ```
 
+# Template Literals
+
+**Backticks(')** are used to symbolize template literals. Template literals may be divided into two types.
+
+1. **Untagged Template Literals**
+    
+    Because these literals produce strings, they can be used for string interpolation. Anything between backticks becomes an entire string, and it's a lot easier to use than traditional string interpolation techniques!
+    
+    ```jsx
+    let name = "Aaveg"
+    
+    let conventionalMethod = "Hello, My name is " + name + ".";
+    let newMethod = `Hello, My name is ${name}.`;
+    
+    console.log(conventionalMethod);
+    console.log(newMethod);
+    ```
+    
+2. **Tagged Template Literals**
+    
+    Tagged template literals invokes a **function** with an **array of text segments** from the literal and **arguments that are variables** within the literal.
+    
+    ```jsx
+    const fun = (arr, ...args) => {
+      console.log(arr); // ['Hello, I am ', ', currently living in ', ' and doing graduation from ', '']
+      console.log(args); // ['Aaveg', 'Gurugram', 'IIST Indore']
+    };
+    
+    let name = "Aaveg";
+    let city = "Gurugram";
+    let college = "IIST Indore";
+    
+    fun`Hello, I am ${name}, currently living in ${city} and doing graduation from ${college}`;
+    ```
+    
+
+# Array Destructuring
+
+Let's say we have an **array** and we want to place the items of the array into **separate variables**. The standard way is to **declare** the variable and then **initialize** it based on the index of the element in the array. However, when we have a lot of variables, this technique becomes cumbersome. In these circumstances, **array destructuring** comes into play, allowing us to **initialize variables** with array items in a **single line**.
+
+```jsx
+let arr = ["Aaveg", "Gurugram", [10, "September"]];
+
+let nameOldMethod = arr[0];
+let cityOldMethod = arr[1];
+let dobOldMethod = arr[2][0];
+let domOldMethod = arr[2][1];
+
+let [nameNewMethod, cityNewMethod, [dobNewMethod, domNewMethod]] = arr;
+```
+
+# Object Destructuring
+
+**Object destructuring** works similarly to array destructuring. In a **single line**, we may assign elements of objects to variables.
+
+```jsx
+let info = {
+  name: "Aaveg",
+  city: "Gurugram",
+  dob: {
+    date: 10,
+    month: "September",
+  },
+};
+
+let {name: newName, city, dob: { date, month }} = info;
+```
+
 ## *IN PROGRESS...*
